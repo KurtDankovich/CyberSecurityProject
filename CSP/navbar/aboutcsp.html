@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cyber Security Project</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+<body>
+    <main>
+        <!--Navigation bar-->
+        <div class="topnav">
+          <a href="main.html">Home</a> 
+          <a href="aboutcsp.html">About Project</a>
+          <a href="tools.html">Necessary Tools</a>
+          <a href="googlecloud.html">Google Cloud Enviroment</a>
+          <a href="installation.html">T-Pot Installation</a> 
+          <a href="data.html">Data</a>
+      </div>
+
+        <!--Page Title-->
+        <div class="aboutproject">
+        <h1>About Project</h1>
+        <h2>Introduction</h2>
+        <p>The technological world has been growing for the last few decades at a very fast pace.  With the growth of new technologies, more sophisticated threats started to become developed which could be hazardous to the systems
+           that are used by the average user or even damage the security of a massive organization.  One method of securing a network from unwanted threats is to create a honeypot network.</p>
+          <h2>What is a Honeypot?</h2>
+            <p>Norton.com describes a honeypot as a “security tool that can help computer systems be defined against cyber attacks in unique ways.”(NortonOnline)  A honeypot is a decoy network that contains systems that are posing as real user systems.  
+          Attackers will target these honeypots as they believe they are real vulnerable systems that they can steal information that could be useful to the attack.  A honeypot is used in order to gain vital information on an attacker’s behavior.</p>
+          <h2>Benefits of a Honeypot</h2>
+            <p>	A honeypot has several benefits that include giving a user or organization the visibility to see what exactly a firewall is missing.  IT professionals will be able to use the honeypot to create new rules that can block any activity from the IP addresses that are trying
+           to attack the network.  The honeypot also gives a user or organization the methods that attackers are using to attack their network.  Honeypots also waste an attacker's time and resources which will take away time they spend attacking the real network.</p>
+          <h2>T-Pot Honeypot</h2>
+            <p>	The honeypot I am choosing to deploy is T-Pot that was developed by Telekom Security.  T-Pot is an all in one honeypot that can be deployed on a cloud service using a virtual machine.  T-Pot requires at least 8GB of RAM while needing 128GB of storage.
+              There are two methods of deploying this honeypot.  One method is to use a dedicated physical machine to run the honeypot.  The second method is to run a virtual machine on a cloud service and deploy T-Pot to the virtual machine.
+              This method requires a cloud service and internet access.  I decided to use the cloud method as I do not have any spare physical machine.  Also, cloud services use a pay as you go method for how much resources are used.</p>
+          <h2>Cloud Service</h2>
+            <p>T-Pot requires a system to be run on.  The way to implement this is to use a cloud service.  The cloud is a series of computer system resources that can be used by an end user.
+             For example, Google runs the Google Cloud which is a bunch of physical systems that are in place for a user to use with minimal physical user hardware.
+             The user does not have to perform any system maintenance as the cloud provider deals with the systems on their end.
+             Some benefits of using a cloud service are cost to operate, more security as the cloud provider provides necessary security, and loss prevention.
+             In my case, using a cloud service will prevent my real system from being attacked and if anything goes wrong I can keep my physical systems safe as I can delete the virtual machine instance that T-Pot resides on.</p>
+          <h2>Why Google Cloud</h2>
+            <p>Google Cloud is a cloud service that is maintained by Google.  They offer $300 credit over 90 days for new users.  They also have no autocharge after the free trial ends.
+              This $300 credit will be enough to host a virtual machine that has 8GB RAM and 128GB of storage.  Google Cloud has all the necessary tools in order to get T-Pot up and running.
+              Google Cloud also secures my personal network as they do not give virtual machines IP addresses on my home network.  They use VPNs in order to give a different IP address.</p>
+              <figure>
+                <img src="../pics/cloudCredit.PNG" alt="cloudCredit">
+                <figcaption>Fig. 1.1</figcaption>
+              </figure>
+              
+          <h2>Virtual Machine</h2>
+            <p>A virtual machine is a computing resource that uses software instead of physical machines to run its own instance with its own operating system.
+              A virtual machine allows for a system to run like a whole new system without changing the original system.  A virtual machine can be run in software such as VMware or can be run using a cloud service.
+              On Google Cloud, I will be making a virtual machine that runs Debian 10.  Figure 1.2 shows the virtual machine set up.  The virtual machine has 8GB ram, 128GB storage,  is running Debian 10 and will cost
+              $68.29 a month.</p>
+              <figure>
+                <img src="../pics/VMsetup.PNG" alt="VMsetup">
+                <figcaption>Fig. 1.2</figcaption>
+              </figure>
+              
+
+          <h2>Summary</h2>
+            <p>This project will consist of deploying T-Pot honeypot to a Debian based virtual machine that is being hosted on Google Cloud.  This project will need a virtual machine that has 8GB RAM, 128GB of storage, and Debian 10.
+              T-Pot installation and all necessary files can be found at https://github.com/telekom-security/tpotce.  The purpose of this project is to see what, where and who is attacking the honeypot and to analyze the data after 1 month of leaving T-Pot on.</p>
+
+        </div>
+        <!--Footer-->
+        <div class="footer"></div>   
+    </main>
+  </body>
+
+</html>
