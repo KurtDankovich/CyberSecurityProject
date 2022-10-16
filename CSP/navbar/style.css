@@ -7,7 +7,8 @@ body {
     background-color: #565656;
     padding: 8px 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+
 }
 .topnav a {
     
