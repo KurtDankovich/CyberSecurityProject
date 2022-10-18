@@ -4,9 +4,10 @@
 <a href="../googlecloud.html">Google Cloud Enviroment</a>  
 <a href="../data.html">Data</a>
 
-<a href="../index.html">Home</a> 
-<a href="Cowrie.html">Cowrie</a>
-<a href="Ddospot.html">Ddospot</a>
-<a href="Heralding.html">Heralding</a>  
-<a href="HoneyTrap.html">HoneyTrap</a>
-<a href="Dionaea.html">Dionaea</a>
+<a href="../index.html">Home</a>&nbsp;&nbsp;
+<a href="../navbar/data.html">Graphs</a>&nbsp;&nbsp;
+<a href="Cowrie.html">Cowrie</a>&nbsp;&nbsp;
+<a href="Ddospot.html">Ddospot</a>&nbsp;&nbsp;
+<a href="Heralding.html">Heralding</a>&nbsp;&nbsp;  
+<a href="HoneyTrap.html">HoneyTrap</a>&nbsp;&nbsp;
+<a href="Dionaea.html">Dionaea</a>&nbsp;&nbsp;
