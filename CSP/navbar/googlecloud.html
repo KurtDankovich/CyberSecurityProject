@@ -13,7 +13,7 @@
     <main>
         <!--Navigation bar-->
         <div class="topnav" id="myTopnav">
-          <a href="../index.html">Home</a> 
+          <a href="../index.html">&#8962;Home</a> 
           <a href="aboutcsp.html">About Project</a>
           <a href="tools.html">Tools</a>
           <a href="googlecloud.html">GCE</a>
@@ -25,23 +25,52 @@
         <!--Page Title-->
       <div class="gce">
         <h1>Google Cloud Enviroment</h1>
-        <h2>Hosting T-Pot to Google Cloud</h2>
-        <h3>Create VM Instance</h3>
-        <h3>Update System</h3>
-        <h3>Download Git</h3>
-        <h3>Clone T-Pot Repository</h3>
-        <h3>T-Pot Initial Installation</h3>
-        <h3>Give T-Pot Username/Password</h3>
-        <h3>Access T-Pot Interface</h3>
-        
-        
+        <!--Static Website-->
         <h2>Hosting Static Website on Google Cloud</h2>
         <h3>Obtain Domain Name</h3>
+        <p>The first step in order to host a static webpage on Google Cloud is to acquire a domain name from a domain name hosting organization such as Google Domains, Bluehost, GoDaddy, etc.
+            I decided to purchase the domain dankcsp.org through Bluehost.
+        </p>
+        <figure>
+          <img src="../images/bluehostDomain.PNG" alt="bluehostDomain" width="500 px">
+          <figcaption>Fig. 2.1</figcaption>
+        </figure>
         <h3>Verify Domain Name</h3>
+        <p>The next step is to verify the domain through Google Search Console.  This process involves typing the acquired domain name into the section that says "Domain".  Google will then bring 
+          up a popup that will provide a CNAME or TXT record.  It is important to copy either the CNAME or TXT record.
+        </p>
+        <figure>
+          <img src="../images/domainVerification.PNG" alt="domainVerification" width="500 px">
+          <figcaption>Fig. 2.2</figcaption>
+        </figure>
+        <p>Once the CNAME or TXT record is copied. Head over to the domain hosting organization site in which the domain was purchased (Bluehost in my case).  From there, click on the domain acquired 
+          and navigate to where there is CNAME or TXT record entry.  Paste the record into the correct entry whether that be CNAME or TXT.  After some time, there should be a Ownership Auto Verified message 
+        that says domain verification was successful.  Figure 2.3 shows the message that should pop up if the verification was successful. </p>
+        <figure>
+          <img src="../images/domainVerification1.PNG" alt="domainVerification1" width="500 px">
+          <figcaption>Fig. 2.3</figcaption>
+        </figure>
         <h3>Create a Bucket</h3>
+        <p>To host a static website on the Google Cloud, a bucket must be created to hold the code that makes up the website. To create a bucket the first thing while at the Google Cloud Console is to click on the console search bar and type "Buckets".  
+          Click the option that says Buckets.  Once at the buckets page, click "Create".</p>
+          <p>Name the bucket exactly whatever domain was verified from earlier(for me it was dankcsp.org).  There is an option where to store the data however I choose the default option which was multiregion.</p>
+        <figure>
+          <img src="../images/bucketCreation.PNG" alt="bucketCreation" width="500 px">
+          <figcaption>Fig. 2.4</figcaption>
+        </figure>
         <h3>Upload Code</h3>
+        <p>The newly created bucket will appear at the main bucket page.  From here, click on the new bucket.  This will give a space where code can be uploaded and stored within the bucket.  Once uploaded the server will take minutes to update and the domain
+           name should be accessible.
+        </p>
+        <figure>
+          <img src="../images/bucketCloud.PNG" alt="bucketCloud" width="500 px">
+          <figcaption>Fig. 2.5</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/webCode.PNG" alt="webCode" width="500 px">
+          <figcaption>Fig. 2.6</figcaption>
+        </figure>
       </div>
-
         <!--Footer-->
         <div class="footer"></div>   
     </main>

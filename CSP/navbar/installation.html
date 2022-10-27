@@ -13,7 +13,7 @@
     <main>
         <!--Navigation bar-->
         <div class="topnav" id="myTopnav">
-          <a href="../index.html">Home</a> 
+          <a href="../index.html">&#8962;Home</a> 
           <a href="aboutcsp.html">About Project</a>
           <a href="tools.html">Tools</a>
           <a href="googlecloud.html">GCE</a>
@@ -24,7 +24,84 @@
 
         <!--Page Title-->
         <h1>T-Pot Installation</h1>
-        
+        <div class="gce">
+        <!--TPOT-->
+        <h2>Hosting T-Pot to Google Cloud</h2>
+        <h3>Create VM Instance</h3>
+        <p>The first step in setting up T-Pot on the Google Cloud Platfrom is to create a virtual machine instance.
+          This instance can have any desired name.  For example, I used "csp-tpot" as my instance name.  Google Cloud offers different
+          regions and zones in which a virtual machine can be hosted.  The United States has 4 main regions that consist of US-Central, US-West, and US-East.  US-Central 
+          fitted my needs.</p>
+          <p>The next step is to choose what kind of machine configuration should be used.  I chose E2 as this is a general purpose VM that is offered in the 
+          Google Compute Engine.  E2 was introduced to be optimized, cost effective, and flexible with workloads.  T-Pot requires the machine to 
+          run Debian 11 with using 8GB RAM and 128GB storage.  The total price to run this configured VM is $61.72 a month.
+          </p>
+        <figure>
+          <img src="../images/VMsetup.PNG" alt="VMsetup" width="500 px">
+          <figcaption>Fig. 3.1</figcaption>
+        </figure>
+        <h3>Update System</h3>
+        <p>The next step is SSH into the VM.  There is a button next to the instance name to do so.  Change to root by using: <b>sudo su -</b></p>
+        <p>Use command: <b>apt-get update && apt-get upgrade</b></p>
+        <p>apt-get update is used to get the latest package list from Debian repositories while apt-get upgrade will download and install updates for all the outdated packages on the system.  
+          The list of sources that will be fetched can be found in /etc/apt/sources.list.
+        </p>
+        <figure>
+          <img src="../images/root-update.PNG" alt="updateOS" width="500 px">
+          <figcaption>Fig. 3.2</figcaption>
+        </figure>
+        <h3>Download Git</h3>
+        <p>Git was created by Linus Torvalds in 2005 in order to have developers work together on a project from different machines.  Git is a tool that developers use to manage source code and 
+          allows developers to see any changes that were made to the source code of a project.  Git also gives developers a source of backup as Git allows to push recent changes to source code straight to Github.  
+          Github is a user-friendly interface that acts as a Git repository that is hosted in the cloud.
+        </p>
+        <figure>
+          <img src="../images/gitInstall.PNG" alt="gitInstall" width="500 px">
+          <figcaption>Fig. 3.3</figcaption>
+        </figure>
+        <h3>Clone T-Pot Repository</h3>
+        <p>The next step is to clone the T-Pot repository onto the VM.  Git clone command is used to get an existing repository from Github.  The command will go to the repository that is listed
+          and will download all the files needed to install T-Pot correctly.</p>
+        <p>Use <b>git clone https://github.com/telekom-security/tpotce.git</b></p>
+        <figure>
+          <img src="../images/tpotInstall.PNG" alt="tpotInstall" width="500 px">
+          <figcaption>Fig. 3.4</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/clonedTpot.PNG" alt="tpotClone" width="500 px">
+          <figcaption>Fig. 3.5</figcaption>
+        </figure>
+        <h3>T-Pot Initial Installation</h3>
+        <p>The step above may take a few minutes to download all the neccessary files.  Once the download is complete, the next step is to locate the installation file. 
+          The installation file is found in ~/tpotce directory.</p>
+        <p>To change into directory use: <b>cd tpotce</b></p>
+        <p>Once changed into directory, list the files in directory using: <b>ls</b></p>
+        <p>To list all files in directory and permissions use: <b>ls -la</b></p>
+        <p>Notice the file named <b>install.sh</b>, this is the installation file which needs to be ran in order to run T-Pot on the VM.</p>
+        <p>In command line use: <b>./install.sh</b></p>
+        <figure>
+          <img src="../images/installationfiles.PNG" alt="installationFiles" width="500 px">
+          <figcaption>Fig. 3.6</figcaption>
+        </figure>
+        <h3>Give T-Pot Username/Password</h3>
+        <p>Once the installation of T-Pot has finished, there will be an interface that will ask for a desired username and password.  
+          Set this to whatever however this will need to be remembered as it is used to access the T-Pot dashboard.
+        </p>
+        <h3>Access T-Pot Interface</h3>
+        <p>To access the T-Pot interface, you will need the IP address of the VM that was created.  This could be found in the Google Cloud Console under VM instances.  Next to the virtual machine should have an external IP address which is needed.</p>
+        <p>In a web browser, enter the IP address into the search bar followed by :64297.  The dashboard is held on port 64297 as the dashboard uses Kibana which uses port 64297 to show data.  Below is how it should be formatted, x will be value of IP address of VM.</p>
+        <p>Usage: <b>https://xx.xx.xx.xx:64297</b></p>
+        <p>A login pop up will show up which requires the username and password set during the installation phase of T-Pot.</p>
+        <p>Once the correct login information is given, the T-Pot interface will appear.  To view data collected from the honeypots set, click on the Kabana tab.</p>
+        <figure>
+          <img src="../images/vmIP.PNG" alt="vmIP">
+          <figcaption>Fig. 3.7</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/interface.PNG" alt="tpotInterface" width="500 px">
+          <figcaption>Fig. 3.8</figcaption>
+        </figure>
+      </div>
         <!--Footer-->
         <div class="footer"></div>   
     </main>
