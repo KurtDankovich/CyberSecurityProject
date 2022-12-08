@@ -28,7 +28,7 @@
         <!--TPOT-->
         <h2>Hosting T-Pot to Google Cloud</h2>
         <h3>Create VM Instance</h3>
-        <p>The first step in setting up T-Pot on the Google Cloud Platfrom is to create a virtual machine instance.
+        <p>The first step in setting up T-Pot on the Google Cloud Platform is to create a virtual machine instance.
           This instance can have any desired name.  For example, I used "csp-tpot" as my instance name.  Google Cloud offers different
           regions and zones in which a virtual machine can be hosted.  The United States has 4 main regions that consist of US-Central, US-West, and US-East.  US-Central 
           fitted my needs.</p>
@@ -71,6 +71,11 @@
           <img src="../images/clonedTpot.PNG" alt="tpotClone" width="500 px">
           <figcaption>Fig. 3.5</figcaption>
         </figure>
+        <h3>Give T-Pot Username/Password</h3>
+        <p> In order for T-Pot to work correctly, it needs the configuration file that holds the username and password.  The configuration file path is iso/installer/tpot.conf.dist.  I moved the file to the root's home directory in order to use it easily.</p>
+        <p>Open the configuration file in a text editor such as nano and locate the line labeled myCONF_WEB_user= ‘webuser’ and myCONF_WEB_PW= ‘w3b$ecret’.  To create username and password for T-Pot replace “webuser” and “w3b$ecret” with desired login information.</p>
+        <p>To move a copy of T-Pot's configuration file use: <b>cp iso/installer/tpot.conf.dist /root/tpot.conf</b></p>
+        <p>To open configuration file in text editor use: <b>nano tpot.conf</b></p>
         <h3>T-Pot Initial Installation</h3>
         <p>The step above may take a few minutes to download all the neccessary files.  Once the download is complete, the next step is to locate the installation file. 
           The installation file is found in ~/tpotce directory.</p>
@@ -78,15 +83,12 @@
         <p>Once changed into directory, list the files in directory using: <b>ls</b></p>
         <p>To list all files in directory and permissions use: <b>ls -la</b></p>
         <p>Notice the file named <b>install.sh</b>, this is the installation file which needs to be ran in order to run T-Pot on the VM.</p>
-        <p>In command line use: <b>./install.sh</b></p>
+        <p>In command line use: <b>./install.sh --conf=/root/tpot.conf</b></p>
+        <p>Once complete, the command line will say "DONE. Restart computer." Restart the Virtual Machine and T-Pot will take over from there.</p>
         <figure>
           <img src="../images/installationfiles.PNG" alt="installationFiles" width="500 px">
           <figcaption>Fig. 3.6</figcaption>
         </figure>
-        <h3>Give T-Pot Username/Password</h3>
-        <p>Once the installation of T-Pot has finished, there will be an interface that will ask for a desired username and password.  
-          Set this to whatever however this will need to be remembered as it is used to access the T-Pot dashboard.
-        </p>
         <h3>Access T-Pot Interface</h3>
         <p>To access the T-Pot interface, you will need the IP address of the VM that was created.  This could be found in the Google Cloud Console under VM instances.  Next to the virtual machine should have an external IP address which is needed.</p>
         <p>In a web browser, enter the IP address into the search bar followed by :64297.  The dashboard is held on port 64297 as the dashboard uses Kibana which uses port 64297 to show data.  Below is how it should be formatted, x will be value of IP address of VM.</p>
